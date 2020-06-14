@@ -1,0 +1,7 @@
+com\micro\servicecollector\RabbitConfiguration.class
+com\micro\servicecollector\SmsMailQueueController.class
+com\micro\servicecollector\CustomerDto.class
+com\micro\servicecollector\RemoteEvent.class
+com\micro\servicecollector\RemoteEventListener.class
+com\micro\servicecollector\SmsMailQueueService.class
+com\micro\servicecollector\ServiceCollectorApplication.class

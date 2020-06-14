@@ -1,0 +1,37 @@
+spring:
+  application:
+    name:  collector
+  profiles:
+    active: ${environment:dev}
+  rabbitmq:
+    host: 10.70.16.66
+    port: 5672
+    username: acq
+    password: acq
+
+  cloud:
+    config:
+      uri: ${configUrl:http://127.0.0.1:8888}
+    stream:
+      bindings:
+        springCloudBusInput:
+          destination: cloud-queue
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:5555/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, httptrace, shutdown, logger, hystrix.stream
+  endpoint:
+    health:
+      show-details: always
+
+server:
+  port: 8777
